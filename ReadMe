@@ -1,0 +1,23 @@
+Problem:
+You are tasked with designing a payment system that supports multiple payment gateways.
+However, each payment provider (e.g., PayPal, Stripe, Google Pay) has its own API and interface,
+making it difficult to switch between providers seamlessly.
+
+Your goal is to provide a common interface for handling payments,
+making it easy for the application to process payments through any provider
+without needing to know the details of each specific API.
+
+Context:
+You have three payment systems: PayPalPayment, StripePayment, and GooglePayPayment.
+Each of these payment systems has a unique way of handling payment transactions.
+You need to design a system where all payment types are handled through a common payment interface,
+regardless of the provider being used.
+
+
+Key Classes in this Example:
+Target Interface: targetInterface.PaymentProcessor - The interface your application expects to use.
+Adaptee Classes: PayPalPayment, StripePayment, and GooglePayPayment - These classes represent the different
+payment systems with their own APIs.
+Adapter Classes: Each payment system will have its own adapter that implements the targetInterface.PaymentProcessor interface,
+so the application can interact with the payment systems in a unified way.
+Client: The client uses the targetInterface.PaymentProcessor interface to process payments.
